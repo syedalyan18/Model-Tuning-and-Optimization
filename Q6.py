@@ -64,17 +64,17 @@ random_search=RandomizedSearchCV(
 random_search.fit(X_train,Y_train)
 
 best_params_random=random_search.best_params_
-best_score=random_search.best_score_
+best_score_random=random_search.best_score_
 
 best_model_random=random_search.best_estimator_
 
 y_pred_random=random_search.predict(X_test)
 
-accuracy_random=accuracy_score(Y_test,y_pred_grid)
+accuracy_random=accuracy_score(Y_test,y_pred_random)
 
 
-print("\nBest Parameters (RandomizedSearchCV) : ",best_params)
-print("Best Cross-Validation Accuracy (RandomizedSearchCV) : ",best_score)
+print("\nBest Parameters (RandomizedSearchCV) : ",best_params_random)
+print("Best Cross-Validation Accuracy (RandomizedSearchCV) : ",best_score_random)
 print(f"\n Test Accuracy (RandomizedSearchCV): {accuracy_random:.2f}")
 print(f"\n Classification Report :\n {classification_report(Y_test,y_pred_random)}")
 
