@@ -35,8 +35,9 @@ best_model=grid_search.best_estimator_
 y_pred_grid=grid_search.predict(X_test)
 
 accuracy_grid=accuracy_score(Y_test,y_pred_grid)
-
-print(f"Test Accuracy (Grid Search): {accuracy_grid:.2f}")
+print("Best Parameters (GridSearchCV) : ",best_params)
+print("Best Cross-Validation Accuracy (GridSearchCV) : ",best_score)
+print(f"Test Accuracy (GridSearchCV): {accuracy_grid:.2f}")
 print(f"\n Classification Report :\n {classification_report(Y_test,y_pred_grid)}")
 
 
@@ -71,6 +72,9 @@ y_pred_random=random_search.predict(X_test)
 
 accuracy_random=accuracy_score(Y_test,y_pred_grid)
 
-print(f"\n Test Accuracy (Random Search): {accuracy_random:.2f}")
+
+print("\nBest Parameters (RandomizedSearchCV) : ",best_params)
+print("Best Cross-Validation Accuracy (RandomizedSearchCV) : ",best_score)
+print(f"\n Test Accuracy (RandomizedSearchCV): {accuracy_random:.2f}")
 print(f"\n Classification Report :\n {classification_report(Y_test,y_pred_random)}")
 
